@@ -1,7 +1,7 @@
 #Este codigo calcula o volume de uma caixa retangular
-comprimento = 12
-largura = 14
-altura = 28
+comprimento = int(input("Digite o valor do comprimento: "))
+largura = int(input("Digite o valor da largura: "))
+altura = int(input("Digite o valor da altura: "))
 
 volume = comprimento * largura * altura
-print(volume)
+print(f"O volume da caixa é {volume}")
