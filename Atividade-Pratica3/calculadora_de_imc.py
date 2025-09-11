@@ -7,10 +7,10 @@ print(f"Seu imc é: {imc:.2f}")
 if imc <= 18.5:
     print("Voce esta abaixo do peso. ")
 
-elif imc <= 25.0:
+elif imc > 18.5 and imc <= 25.0:
     print("peso normal. ")
 
-elif imc <= 30.0:
+elif imc > 25.0 and imc <= 30.0:
     print("Você esta acima do peso. ")
 
 elif imc <= 0:
