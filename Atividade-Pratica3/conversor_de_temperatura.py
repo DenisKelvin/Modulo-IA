@@ -1,20 +1,39 @@
-celsius = float(input("digite a temperatura em celsius: "))
-kelvin = float(input("digite a temperatura em kelvin: "))
-fahrenheit = float(input("digite a temperatura em fahrenheit: "))
+while True:
+    conversor = input("Escolha um convertor: (cpk, cpf, kpc, kpf, fpc, fpk, sair )").lower()
+    if conversor == 'sair':
+        print("Encerrando! ")
+        break
+    
+    if conversor not in ['cpk', 'cpf', 'kpc', 'kpf', 'fpc', 'fpk', 'sair' ]:
+        print("Escolha um dos mostrados acima! ")
+        continue
+    
+    try:
+        num1 = float(input("informe o clima que deseja converter: "))
+        
+        if conversor == 'cpk':
+            calculo = num1 + 273.15
+            print(f"O resultado é {calculo:.2f}")
 
-celsius_para_kelvin = celsius + kelvin
-celsius_para_fahrenheit = (celsius * 1.8) + 32
-kelvin_para_fahrenheit = (kelvin - 273.15 * 1.8) + 32
-kelvin_para_celsius = kelvin - 273.15
-fahrenheit_para_celsius = (fahrenheit - 32) / 1.8
-fahrenheit_para_kelvin = (fahrenheit - 32 / 1.8) + kelvin
+        elif conversor == 'cpf':
+            calculo = (num1 * 1.8) + 32
+            print(f"O resultado é {calculo:.2f}")
+            
+        elif conversor == 'kpc':
+            calculo = num1 - 273.15
+            print(f"O resultado é {calculo:.2f}") 
+            
+        elif conversor == 'kpf':
+            calculo = (num1 - 273.15 * 1.8) + 32
+            print(f"O resultado é {calculo:.2f}")
+            
+        elif conversor == 'fpc':
+            calculo = (num1 - 32) / 1.8
+            print(f"O resultado é {calculo:.2f}")
+            
+        elif conversor == 'fpk':
+            calculo = (num1 - 32 / 1.8) + 273.15
+            print(f"O resultado é {calculo:.2f}")   
 
-print(f"Temperatura em celsius: {celsius}")
-print(f"Temperatura em kelvin: {kelvin}")
-print(f"Temperatura em fahrenheit: {fahrenheit}")
-print(f"O resultado de celsius para kelvin: {celsius_para_kelvin:.2f}")
-print(f"O resultado de celsius para fahrenheit: {celsius_para_fahrenheit:.2f}")
-print(f"O resultado de kelvin para celsius: {kelvin_para_celsius:.2f}")
-print(f"O resultado de kelvin para fahrenheit: {kelvin_para_fahrenheit:.2f}")
-print(f"O resultado de fahrenheit para celsius: {fahrenheit_para_celsius:.2f} ")
-print(f"O resultado de fahrenheit para kelvin: {fahrenheit_para_kelvin:.2f}")
+    except ValueError:
+        print("Digite apenas numeros! ")    
